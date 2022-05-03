@@ -72,6 +72,11 @@ class ListVariantController : UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destino = segue.destination as! DetailsVariantController
+        destino.variant = variants[tvVariants.indexPathForSelectedRow!.row]
+    }
 
 
 }
